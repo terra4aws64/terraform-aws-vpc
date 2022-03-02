@@ -103,7 +103,7 @@ resource "aws_route_table_association" "dmz_b" {
 
 module "bastion" {
   count         = var.bastion_enabled ? 1 : 0
-  source        = "terra4aws64/bastion/aws-bastion"
+  source        = "terra4aws64/bastion/aws"
   vpc_subnet_id = aws_subnet.dmz_a.id
   vpc_id        = aws_vpc.target.id
   ec2_key       = var.ec2_key
